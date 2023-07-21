@@ -18,8 +18,6 @@ user_home = os.path.expanduser('~')
 video_output_path = os.path.join(user_home, 'Downloads')
 
 # download youtube video and save locally
-# video_url = 'https://www.youtube.com/NyLF8nHIquM'
-# video_url = 'https://youtu.be/Xygk7UjKM2g'
 video_url = 'https://youtu.be/-CeLBsqU6qw'
 
 yt = YouTube(video_url)
@@ -28,11 +26,8 @@ yt = YouTube(video_url)
 video_stream = yt.streams.get_highest_resolution()
 
 # path to download video
-# video_output_path = '/Users/Downloads/'
 video_stream.download(video_output_path)
 video_path = os.path.join(video_output_path, video_stream.default_filename)
-
-# video_path = video_output_path
 
 # put url for youtube video here
 cam = cv.VideoCapture(video_path)
